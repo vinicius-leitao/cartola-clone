@@ -19,7 +19,7 @@ func NewMatchResult(teamAScore, teamBScore int) *MatchResult {
 
 func (m *MatchResult) GetResult() string {
 	// 1-0
-	return strconv.Itoa(m.TeamAScore) + "-" + strconv.Itoa(m.TeamBScores)
+	return strconv.Itoa(m.TeamAScore) + "-" + strconv.Itoa(m.TeamBScore)
 }
 
 type Match struct {
@@ -31,6 +31,7 @@ type Match struct {
 	Date    time.Time
 	Status  string
 	Result  MatchResult
+	Actions []GameAction
 }
 
 func NewMatch(id string, teamA *Team, teamB *Team, date time.Time) *Match {
